@@ -1,0 +1,37 @@
+Antwalk:
+Build Instructions:
+- simply run the executable jar file to launch the program. Program has already been built.
+- If you wish to build program individually:
+- - javac ant.java walk.java UI.java
+    java UI
+- - OR | javac *.java
+         jar cvfe Antwalk.jar UI *.class
+
+Verification process:
+Ran simulation for n=100 runs multiple times, and saw mean time converge to a value of around 10.
+Repeated this process for n=1000.
+
+Program features:
+Returns mean time that ant takes.
+Returns stddev of time.
+
+Future directions:
+Add a feature to add an epsilon value so that program is run n=x times such that it converges to a value which has
+a difference of epsilon between multiple runs of the program.
+
+------------------------------------------------------------------------------------------
+
+Additional Details:
+Classes/Objects:
+
+-ant.java - the ant object.
+Describes position of the ant, and steps taken.
+Simulates ant movement by picking x,y, or z axis uniformly, and moves ant along the randomly selected axis.
+Ant always starts at origin - to add in further randomness, initial position of ant could also be randomized.
+
+-walk.java - the walk object
+Simulates the ants path.
+Creating a new random generator seed for each run, keeps ant moving till [1,1,1] is reached. Stores runtime of each run.
+Calculates mean and standard deviation.
+
+-UI.java - The GUI of the program.
